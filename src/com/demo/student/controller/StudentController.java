@@ -52,6 +52,13 @@ public class StudentController {
 		model.addAttribute("student", theStudent);
 		return "add-student-form";
 	}
+	
+	@GetMapping("/deleteStudent")
+	public String deleteStudent(@RequestParam("studentId") int theId) {
+		studentService.deleteStudent(theId);
+		
+		return "redirect:/student/list";
+	}
 }
 
 

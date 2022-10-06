@@ -30,7 +30,7 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Last Name</th>
-					<th>Action</th>
+					<th colspan=2>Action</th>
 				</tr>
 				
 				<c:forEach var="tempStudent" items="${studentList}">
@@ -38,11 +38,18 @@
 				<c:url var="updateLink" value="/student/showFormForUpdate">
 					<c:param name="studentId" value="${tempStudent.id}" />
 				</c:url>
+				
+				<c:url var="deleteLink" value="/student/deleteStudent">
+					<c:param name="studentId" value="${tempStudent.id}" />
+				</c:url>
+				
 				<tr>
 					<td> ${tempStudent.firstName} </td>
 					<td> ${tempStudent.lastName} </td>
 					<td> ${tempStudent.email} </td>
 					<td> <a href="${updateLink}">Update</a></td>
+					<td> <a href="${deleteLink}"
+								  onclick = "if(!(confirm('Are you sure ?' ))) return false">Delete</a></td>
 				</tr>
 				</c:forEach>
 				
