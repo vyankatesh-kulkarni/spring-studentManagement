@@ -28,4 +28,10 @@ public class StudentDAOImpl implements StudentDAO {
 		return studentList;
 	}
 
+	@Override
+	public void saveStudent(Student theStudent) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(theStudent);
+	}
+
 }

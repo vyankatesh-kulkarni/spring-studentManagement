@@ -7,4 +7,6 @@ import com.demo.student.entity.Student;
 public interface StudentDAO {
 	
 	public List<Student> getStudentList();
+
+	public void saveStudent(Student theStudent);
 }

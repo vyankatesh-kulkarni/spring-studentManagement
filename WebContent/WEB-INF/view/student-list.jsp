@@ -23,7 +23,7 @@
 		<div id="content">
 			<input type="button" value="Add new Student"
 			   class = "add-button"
-			   onclick="" />
+			   onclick="window.location.href='showFormForAdd'; return false" />
 			<table>
 			
 				<tr>
