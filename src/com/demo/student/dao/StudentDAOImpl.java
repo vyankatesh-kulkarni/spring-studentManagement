@@ -31,7 +31,14 @@ public class StudentDAOImpl implements StudentDAO {
 	@Override
 	public void saveStudent(Student theStudent) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(theStudent);
+		session.saveOrUpdate(theStudent);
+	}
+
+	@Override
+	public Student getStudent(int theId) {
+		Session session = sessionFactory.getCurrentSession();
+		Student student = session.get(Student.class, theId);
+		return student;
 	}
 
 }

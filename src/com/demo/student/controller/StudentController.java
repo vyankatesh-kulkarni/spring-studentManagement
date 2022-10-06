@@ -41,4 +41,18 @@ public class StudentController {
 		
 		return "redirect:/student/list";
 	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("studentId") int theId, Model model) {
+		
+		//get student from db
+		Student theStudent = studentService.getStudent(theId);
+		
+		// bind it to model attribute and return
+		model.addAttribute("student", theStudent);
+		return "add-student-form";
+	}
 }
+
+
+
